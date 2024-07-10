@@ -14,6 +14,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Checkout Target Repository
         uses: actions/checkout@v3
         with:
