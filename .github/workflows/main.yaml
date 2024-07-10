@@ -35,7 +35,7 @@ jobs:
       - run: git add .
       - run: git commit -m "add test file"
       #- run: git remote add origin https://${{ secrets.TOKEN }}@github.com/0xvishal/status
-      - run: git push https://${{ secrets.TOKEN }}@github.com/0xvishal/status.git
+      - run: git push https://${{ secrets.TOKEN }}@github.com/0xvishal/status
 
       # - name: Checkout Target Repository
       #   uses: actions/checkout@v3
