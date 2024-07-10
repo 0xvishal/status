@@ -40,6 +40,6 @@ jobs:
           value: 'v1.2.3'
           branch: main/v1.2.3
           targetBranch: main
-          createPR: true
+          createPR: false
           message: 'Update Image Version to 1.2.3' 
 
