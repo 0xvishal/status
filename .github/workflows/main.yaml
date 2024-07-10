@@ -25,7 +25,7 @@ jobs:
         uses: OpsVerseIO/image-updater-action@0.1.0
         with:
           
-          valueFile: 'qa.values.yaml'
+          valueFile: 'infra/helm/qa.values.yaml'
           propertyPath: 'deployment.containers.version'
           value: 'v1.2.3'
           branch: main/v1.2.3
