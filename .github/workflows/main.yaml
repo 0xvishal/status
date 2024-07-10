@@ -49,8 +49,9 @@ jobs:
 
       - name: Update values.yaml
         run: pwd
+      - run: ls infra/helm  
           # #cd infra/helm
-          # sed -i 's|version:.*|APP_VERSION: 'v1.2.3'|' /home/runner/work/status/status/qa.values.yaml 
+      - run: sed -i 's|version:.*|APP_VERSION: 'v1.2.3'|' /home/runner/work/status/status/infra/helm/qa.values.yaml 
           # git config --global user.name 'GitHub Actions'
           # git config --global user.email 'actions@github.com'
           # git add qa.values.yaml
