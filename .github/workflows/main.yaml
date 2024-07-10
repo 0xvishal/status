@@ -34,6 +34,7 @@ jobs:
       - run: git config --global user.name "0xvishal"   
       - run: git add .
       - run: git commit -m "add test file"
+      - run: git remote set-url origin https://0xvishal:${{ secrets.TOKEN }}@github.com/status
       - run: git push
 
       # - name: Checkout Target Repository
