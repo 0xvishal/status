@@ -17,7 +17,7 @@ jobs:
       - name: Checkout Target Repository
         uses: actions/checkout@v3
         with:
-          repository: torum-official/torum-v2-api
+          repository: 0xvishal/status
           path: infra
           token: ${{ secrets.TOKEN }}
 
