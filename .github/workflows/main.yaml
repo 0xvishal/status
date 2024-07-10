@@ -24,7 +24,8 @@ jobs:
       - name: Update Image Version in the related HelmChart values.yaml
         uses: OpsVerseIO/image-updater-action@0.1.0
         with:
-          valueFile: 'infra/helm/qa.values.yaml'
+          
+          valueFile: '/home/runner/work/status/status/infra/helm/qa.values.yaml'
           propertyPath: 'deployment.containers.version'
           value: 'v1.2.3'
           branch: main/v1.2.3
