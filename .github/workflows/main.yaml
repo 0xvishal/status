@@ -17,12 +17,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # - name: Checkout Target Repository
-      #   uses: actions/checkout@v3
-      #   with:
-      #     repository: 0xvishal/status
-      #     path: infra/helm
-      #     token: ${{ secrets.TOKEN }}
+      - name: Checkout Target Repository
+        uses: actions/checkout@v3
+        with:
+          repository: 0xvishal/status
+          path: infra/helm
+          token: ${{ secrets.TOKEN }}
 
       # - name: Update Image Version in the related HelmChart values.yaml
       #   uses: OpsVerseIO/image-updater-action@0.1.0
