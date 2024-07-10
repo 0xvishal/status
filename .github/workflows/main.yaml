@@ -47,20 +47,20 @@ jobs:
       #     createPR: false
       #     message: 'Update Image Version to 1.2.3' 
 
-      - name: Update values.yaml
-        run: pwd
-      - run: ls infra/helm  
+      # - name: Update values.yaml
+      #   run: pwd
+      # - run: ls infra/helm  
 
       - name: Update values.yaml
         run: |      
           cd infra/helm
-          ls infra/helm
-          sed -i 's|version:.*|APP_VERSION: 'v1.2.3'|' infra/helm/qa.values.yaml 
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git add qa.values.yaml
-          git commit -m "Update qa.values.yaml"
-          git push
+          ls -al
+          # sed -i 's|version:.*|APP_VERSION: 'v1.2.3'|' infra/helm/qa.values.yaml 
+          # git config --global user.name 'GitHub Actions'
+          # git config --global user.email 'actions@github.com'
+          # git add qa.values.yaml
+          # git commit -m "Update qa.values.yaml"
+          # git push
 
 
 
