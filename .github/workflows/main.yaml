@@ -30,6 +30,8 @@ jobs:
         run: ls -al
       - run: touch test
       - run: echo "testing" > test
+      - run: git config --global user.email "er.vishalkumargupta@gmail.com"
+      - run: git config --global user.name "0xvishal"   
       - run: git add .
       - run: git commit -m "add test file"
       - run: git push
