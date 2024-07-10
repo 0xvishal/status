@@ -1,0 +1,27 @@
+# Declare variables to be passed into your templates.
+
+# Release-wide Values
+# Service Specific Values
+namespace: qa-v2-auth-ns
+app: qa-auth
+deployment:
+  name: qa-auth-deployment
+  replicas: 1
+  nodegroup: qa
+  containers:
+    name: qa-auth-container
+    version: ''
+    port: 3000
+    cpu: 100m
+    memory: 400Mi
+service:
+  name: qa-auth-svc
+ingress:
+  name: qa-auth-ingress
+  nodegroup: qa
+  service: qa-auth-svc
+hpa:
+  name: qa-auth-hpa
+  maxReplicas: 1
+  minReplicas: 1
+  CPUUtilization: 70
