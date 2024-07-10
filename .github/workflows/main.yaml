@@ -54,7 +54,7 @@ jobs:
       - name: Update values.yaml
         run: |      
           cd infra/helm
-          cat /home/runner/work/status/status/infra/helm/qa.values.yaml
+          cat infra/helm/qa.values.yaml
           # ls -al
           # sed -i 's|version:.*|version: 'v1.2.3'|' /home/runner/work/status/status/infra/helm/qa.values.yaml 
           # git config --global user.name 'GitHub Actions'
