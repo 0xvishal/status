@@ -33,9 +33,9 @@ jobs:
       - run: git config --global user.email "er.vishalkumargupta@gmail.com"
       - run: git config --global user.name "0xvishal"   
       - run: git add .
-      #- run: git commit -m "add test file"
-      - run: git remote add origin https://${{ secrets.TOKEN }}@github.com/0xvishal/status
-      - run: git push
+      - run: git commit -m "add test file"
+      #- run: git remote add origin https://${{ secrets.TOKEN }}@github.com/0xvishal/status
+      - run: git push https://${{ secrets.TOKEN }}@github.com/0xvishal/status.git
 
       # - name: Checkout Target Repository
       #   uses: actions/checkout@v3
