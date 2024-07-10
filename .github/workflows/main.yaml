@@ -56,7 +56,7 @@ jobs:
           cd infra/helm
           cat infra/helm/qa.values.yaml
           # ls -al
-          #sed -i 's|version:.*|version: 'v1.2.3'|' infra/helm/qa.values.yaml 
+          
           touch test
           echo "this is test file " > test
           git config --global user.name 'GitHub Actions'
