@@ -17,11 +17,11 @@ jobs:
       contents: write
       issues: write
     steps:
-      - run: |
-          gh issue --repo ${{ github.repository }} \
-            create --title "Issue title" --body "Issue body"
-        env:
-          GH_TOKEN: ${{ secrets.TOKEN }}
+      # - run: |
+      #     gh issue --repo ${{ github.repository }} \
+      #       create --title "Issue title" --body "Issue body"
+      #   env:
+      #     GH_TOKEN: ${{ secrets.TOKEN }}
 
       - uses: actions/checkout@master
         with:
