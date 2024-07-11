@@ -32,6 +32,8 @@ jobs:
       - run: echo "testing" > test
       - run: git config --global user.email "er.vishalkumargupta@gmail.com"
       - run: git config --global user.name "0xvishal" 
+      - run: git credential-osxkeychain erase host=github.com protocol=https
+      #- run: git remote set-url origin https://USERNAME:TOKEN@github.com/USERNAME/REPO.git 
       - run: git remote set-url origin https://0xvishal:${{ secrets.TOKEN }}@github.com/0xvishal/status.git
 
       - run: git add .
