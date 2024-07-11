@@ -43,7 +43,7 @@ jobs:
       - name: Linux 
         run: ls -al
       - run: touch test
-      - run: echo "testing is going on" > test
+      - run: echo "Still testing" > test
       - run: git config --global user.email "er.vishalkumargupta@gmail.com"
       - run: git config --global user.name "0xvishal" 
       #- run: git credential-osxkeychain erase host=github.com protocol=https
