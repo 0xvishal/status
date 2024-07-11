@@ -38,14 +38,14 @@ jobs:
       #     cat $HOME/.ssh/id_rsa
           
 
-      - name: Checkout code
-        uses: actions/checkout@master
-      - name: Linux 
-        run: ls -al
-      - run: touch test
-      - run: echo "Still testing12" > test
-      - run: git config --global user.email "er.vishalkumargupta@gmail.com"
-      - run: git config --global user.name "0xvishal" 
+      # - name: Checkout code
+      #   uses: actions/checkout@master
+      # - name: Linux 
+      #   run: ls -al
+      # - run: touch test
+      # - run: echo "Still testing12" > test
+      # - run: git config --global user.email "er.vishalkumargupta@gmail.com"
+      # - run: git config --global user.name "0xvishal" 
       #- run: git credential-osxkeychain erase host=github.com protocol=https
       #- run: git remote set-url origin https://USERNAME:TOKEN@github.com/USERNAME/REPO.git 
       #- run: git remote set-url origin https://0xvishal:${{ secrets.TOKEN }}@github.com/0xvishal/status.git
@@ -91,25 +91,25 @@ jobs:
 
 
 
-      # - name: Update values.yaml
-      #   run: |      
-      #     # cd infra/helm
-      #     # cat infra/helm/qa.values.yaml
-      #     # ls -al
-      #     # sed -i 's|version:.*|version: 'v1.2.3'|' infra/helm/qa.values.yaml 
-      #     touch test
-      #     echo "this is test file " > test
-      #     # git config --global user.name 'GitHub Actions'
-      #     # git config --global user.email 'actions@github.com'
-      #     # git config --global user.email "er.vishalkumargupta@gmail.com"
-      #     # git config --global user.name "0xvishal"
-      #     git add .
-      #     git commit -m "add file"
-      #     # git remote set-url origin https://0xvishal:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
-      #     git push 
-      #     # git add qa.values.yaml
-      #     # git commit -m "Update qa.values.yaml"
-      #     # git push
+      - name: Update values.yaml
+        run: |      
+          # cd infra/helm
+          # cat infra/helm/qa.values.yaml
+          # ls -al
+          sed -i 's|version:.*|version: 'v1.2.3'|' infra/helm/qa.values.yaml 
+          # touch test
+          echo "this is test file " > test
+          # git config --global user.name 'GitHub Actions'
+          # git config --global user.email 'actions@github.com'
+          # git config --global user.email "er.vishalkumargupta@gmail.com"
+          # git config --global user.name "0xvishal"
+          git add .
+          git commit -m "update container tag"
+          # git remote set-url origin https://0xvishal:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
+          git push origin main
+          # git add qa.values.yaml
+          # git commit -m "Update qa.values.yaml"
+          # git push origin main
 
 
 
