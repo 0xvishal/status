@@ -28,14 +28,14 @@ jobs:
           node-version: ${{ matrix.node-version }}    
     
 
-      - name: Access for gitmodules
-        env:
-          SSH_KEY_GITMODULES: ${{secrets.PRI_SSH_KEY}}
-        run: |
-          mkdir $HOME/.ssh
-          echo "$SSH_KEY_GITMODULES" > $HOME/.ssh/id_rsa
-          chmod 400 $HOME/.ssh/id_rsa
-          cat $HOME/.ssh/id_rsa
+      # - name: Access for gitmodules
+      #   env:
+      #     SSH_KEY_GITMODULES: ${{secrets.PRI_SSH_KEY}}
+      #   run: |
+      #     mkdir $HOME/.ssh
+      #     echo "$SSH_KEY_GITMODULES" > $HOME/.ssh/id_rsa
+      #     chmod 400 $HOME/.ssh/id_rsa
+      #     cat $HOME/.ssh/id_rsa
           
 
       - name: Checkout code
@@ -44,8 +44,8 @@ jobs:
         run: ls -al
       - run: touch test
       - run: echo "Still testing1" > test
-      # - run: git config --global user.email "er.vishalkumargupta@gmail.com"
-      # - run: git config --global user.name "0xvishal" 
+      - run: git config --global user.email "er.vishalkumargupta@gmail.com"
+      - run: git config --global user.name "0xvishal" 
       #- run: git credential-osxkeychain erase host=github.com protocol=https
       #- run: git remote set-url origin https://USERNAME:TOKEN@github.com/USERNAME/REPO.git 
       #- run: git remote set-url origin https://0xvishal:${{ secrets.TOKEN }}@github.com/0xvishal/status.git
