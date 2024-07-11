@@ -50,10 +50,9 @@ jobs:
       #- run: git remote set-url origin https://USERNAME:TOKEN@github.com/USERNAME/REPO.git 
       #- run: git remote set-url origin https://0xvishal:${{ secrets.TOKEN }}@github.com/0xvishal/status.git
 
-      - run: git add .
-      - run: git commit -m "add test file"
-      #- run: git remote add origin https://${{ secrets.TOKEN }}@github.com/0xvishal/status
-      - run: git push origin main
+      # - run: git add .
+      # - run: git commit -m "add test file"
+      # - run: git push origin main
       
       # - name: Checkout Target Repository
       #   uses: actions/checkout@v3
@@ -98,18 +97,13 @@ jobs:
           # ls -al
           sed -i 's|version:.*|version: 'v1.2.3'|' infra/helm/qa.values.yaml 
           # touch test
-          echo "this is test file " > test
-          # git config --global user.name 'GitHub Actions'
-          # git config --global user.email 'actions@github.com'
-          # git config --global user.email "er.vishalkumargupta@gmail.com"
-          # git config --global user.name "0xvishal"
+          # echo "this is test file " > test
+          git config --global user.email "er.vishalkumargupta@gmail.com"
+          git config --global user.name "0xvishal"
           git add .
           git commit -m "update container tag"
-          # git remote set-url origin https://0xvishal:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
           git push origin main
-          # git add qa.values.yaml
-          # git commit -m "Update qa.values.yaml"
-          # git push origin main
+
 
 
 
