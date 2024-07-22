@@ -62,11 +62,12 @@ jobs:
           valueFile: 'infra/helm/qa.values.yaml'
           propertyPath: 'deployment.containers.version'
           value: 'v1.2.3'
-          branch: main/v1.2.3
-          targetBranch: main
-          masterBranchName: main
-          createPR: false
-          message: 'Update Image Version to 1.2.3' 
+          commitChange: false
+          # branch: main/v1.2.3
+          # targetBranch: main
+          # masterBranchName: main
+          # createPR: false
+          # message: 'Update Image Version to 1.2.3' 
 
       # - name: Update values.yaml
       #   run: pwd
