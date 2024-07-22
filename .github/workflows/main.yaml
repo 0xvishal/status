@@ -62,7 +62,7 @@ jobs:
           valueFile: 'infra/helm/qa.values.yaml'
           propertyPath: 'deployment.containers.version'
           value: 'v1.2.3'
-          commitChange: false
+          commitChange: true
           # branch: main/v1.2.3
           # targetBranch: main
           # masterBranchName: main
