@@ -17,25 +17,9 @@ jobs:
       contents: write
       issues: write
     steps:
-      # - run: |
-      #     gh issue --repo ${{ github.repository }} \
-      #       create --title "Issue title" --body "Issue body"
-      #   env:
-      #     GH_TOKEN: ${{ secrets.TOKEN }}
-
       - uses: actions/checkout@master
         with:
           node-version: ${{ matrix.node-version }}    
-    
-
-      # - name: Access for gitmodules
-      #   env:
-      #     SSH_KEY_GITMODULES: ${{secrets.PRI_SSH_KEY}}
-      #   run: |
-      #     mkdir $HOME/.ssh
-      #     echo "$SSH_KEY_GITMODULES" > $HOME/.ssh/id_rsa
-      #     chmod 400 $HOME/.ssh/id_rsa
-      #     cat $HOME/.ssh/id_rsa
           
 
       # - name: Checkout code
@@ -72,17 +56,17 @@ jobs:
       #     createPR: true
       #     message: 'Update Image Version to v1.2.3'
 
-      # - name: Update Image Version in the related HelmChart values.yaml
-      #   uses: OpsVerseIO/image-updater-action@0.1.0
-      #   with:
-      #     valueFile: 'infra/helm/qa.values.yaml'
-      #     propertyPath: 'deployment.containers.version'
-      #     value: 'v1.2.3'
-      #     branch: main/v1.2.3
-      #     targetBranch: main
-      #     masterBranchName: main
-      #     createPR: false
-      #     message: 'Update Image Version to 1.2.3' 
+      - name: Update Image Version in the related HelmChart values.yaml
+        uses: OpsVerseIO/image-updater-action@0.1.0
+        with:
+          valueFile: 'infra/helm/qa.values.yaml'
+          propertyPath: 'deployment.containers.version'
+          value: 'v1.2.3'
+          branch: main/v1.2.3
+          targetBranch: main
+          masterBranchName: main
+          createPR: false
+          message: 'Update Image Version to 1.2.3' 
 
       # - name: Update values.yaml
       #   run: pwd
@@ -90,14 +74,14 @@ jobs:
 
 
 
-      - name: Update values.yaml
-        run: |      
-          sed -i 's|version:.*|version: 'v1.2.4'|' infra/helm/qa.values.yaml 
-          git config --global user.email "er.vishalkumargupta@gmail.com"
-          git config --global user.name "0xvishal"
-          git add .
-          git commit -m "update container tag"
-          git push origin main
+      # - name: Update values.yaml
+      #   run: |      
+      #     sed -i 's|version:.*|version: 'v1.2.4'|' infra/helm/qa.values.yaml 
+      #     git config --global user.email "er.vishalkumargupta@gmail.com"
+      #     git config --global user.name "0xvishal"
+      #     git add .
+      #     git commit -m "update container tag"
+      #     git push origin main
 
 
 
