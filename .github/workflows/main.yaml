@@ -56,17 +56,17 @@ jobs:
       #     createPR: true
       #     message: 'Update Image Version to v1.2.3'
 
-      - name: Update Image Version in the related HelmChart values.yaml
-        uses: OpsVerseIO/image-updater-action@0.1.0
-        with:
-          valueFile: 'infra/helm/qa.values.yaml'
-          propertyPath: 'deployment.containers.version'
-          value: 'v1.2.3'
-          branch: main/v1.2.3
-          targetBranch: main
-          masterBranchName: main
-          createPR: true
-          message: 'Update Image Version to 1.2.3' 
+      # - name: Update Image Version in the related HelmChart values.yaml
+      #   uses: OpsVerseIO/image-updater-action@0.1.0
+      #   with:
+      #     valueFile: 'infra/helm/qa.values.yaml'
+      #     propertyPath: 'deployment.containers.version'
+      #     value: 'v1.2.3'
+      #     branch: main/v1.2.3
+      #     targetBranch: main
+      #     masterBranchName: main
+      #     createPR: true
+      #     message: 'Update Image Version to 1.2.3' 
 
       # - name: Update values.yaml
       #   run: pwd
@@ -74,14 +74,16 @@ jobs:
 
 
 
-      # - name: Update values.yaml
-      #   run: |      
-      #     sed -i 's|version:.*|version: 'v1.2.4'|' infra/helm/qa.values.yaml 
-      #     git config --global user.email "er.vishalkumargupta@gmail.com"
-      #     git config --global user.name "0xvishal"
-      #     git add .
-      #     git commit -m "update container tag"
-      #     git push origin main
+      - name: Update values.yaml
+        run: |      
+          sed -i 's|version:.*|version: 'v1.2.3'|' infra/helm/qa.values.yaml 
+          #git config --global user.email "er.vishalkumargupta@gmail.com"
+          #git config --global user.name "0xvishal"
+          git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+          git add .
+          git commit -m "update container tag"
+          git push origin main
 
 
 
