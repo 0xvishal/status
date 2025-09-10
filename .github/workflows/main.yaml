@@ -76,7 +76,7 @@ jobs:
 
       - name: Update values.yaml
         run: |      
-          sed -i 's|version:.*|version: 'v1.2.3'|' infra/helm/qa.values.yaml 
+          sed -i 's|version:.*|version: 'v1.2.4'|' infra/helm/qa.values.yaml 
           #git config --global user.email "er.vishalkumargupta@gmail.com"
           #git config --global user.name "0xvishal"
           git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
