@@ -10,7 +10,7 @@ deployment:
   nodegroup: qa
   containers:
     name: qa-auth-container
-    version: v1.2.4
+    version: v1.2.5
     port: 3000
     cpu: 100m
     memory: 400Mi
